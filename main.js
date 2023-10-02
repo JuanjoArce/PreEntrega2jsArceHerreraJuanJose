@@ -28,4 +28,23 @@ while(agregarOtra){
     apellido = prompt("Ingrese el apellido:");
     ingreso = parseFloat(prompt("Ingrese su ingresos:"));
     egreso = parseFloat(prompt("Ingrese sus gastos"));
+
+    nuevaPersona = new Persona(nombre, apellido, ingreso, egreso);
+    personas.push(nuevaPersona);
+
+    agregarOtra = confirm("Desea agregar otra persona?")
 }
+
+// Mostrar los datos
+let mensaje = "Datos de todas las personas:\n";
+for (let i = 0; i < personas.length; i++) {
+    let persona = personas[i];
+    mensaje += "Persona " + (i + 1) + ":\n" +
+            "Nombre: " + persona.nombre + "\n" +
+            "Apellido: " + persona.apellido + "\n" +
+            "Ingreso: $" + persona.ingreso + "\n" +
+            "Egreso: $" + persona.egreso + "\n" +
+            "Saldo: $" + persona.saldo + "\n\n";
+}
+
+alert(mensaje);
